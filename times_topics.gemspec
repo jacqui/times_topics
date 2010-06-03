@@ -28,7 +28,8 @@ Gem::Specification.new do |s|
      "test/helper.rb",
      "test/test_times_tags.rb",
      "test/test_times_topics.rb",
-     "test/times_topics.yml"
+     "test/times_topics.yml",
+     "times_topics.gemspec"
   ]
   s.homepage = %q{http://github.com/jacqui/times_topics}
   s.rdoc_options = ["--charset=UTF-8"]
