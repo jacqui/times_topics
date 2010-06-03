@@ -1,3 +1,5 @@
+require 'times_tags'
+
 class TimesTopics
   BASE_URI = 'http://topics.nytimes.com/top/reference/timestopics/'
   attr_accessor :query, :type, :url, :result, :related_results, :num_results

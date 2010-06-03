@@ -29,19 +29,19 @@ class TimesTags
   end
 
   def self.person_search(name)
-    get('/suggest', :query => { :query => name, :filter => '(Per)'})
+    get('/suggest', :query => { :query => name, :filter => '(Per)', 'api-key' => api_key})
   end
 
   def self.organization_search(name)
-    get('/suggest', :query => { :query => name, :filter => '(Org)'})
+    get('/suggest', :query => { :query => name, :filter => '(Org)', 'api-key' => api_key})
   end
 
   def self.geographic_search(name)
-    get('/suggest', :query => { :query => name, :filter => '(Geo)'})
+    get('/suggest', :query => { :query => name, :filter => '(Geo)', 'api-key' => api_key})
   end
 
   def self.subject_search(name)
-    get('/suggest', :query => { :query => name, :filter => '(Des)'})
+    get('/suggest', :query => { :query => name, :filter => '(Des)', 'api-key' => api_key})
   end
 
   def self.search(query, type)
