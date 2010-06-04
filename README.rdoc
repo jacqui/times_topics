@@ -13,34 +13,34 @@ api_key: 123456abcde
 
 You can then interact with Times Topics:
 
-require 'times_topics'
+    require 'times_topics'
 
-tt = TimesTopics.new("Al Qaeda", "organization")
-# => #<TimesTopics:0x10220b798 @url="http://topics.nytimes.com/top/reference/timestopics/organizations/a/al_qaeda/index.html", @related_results=["Al Qaeda in Mesopotamia (Org)", "Al Qaeda in the Islamic Maghreb (Org)"], @query="Al Qaeda", @type="organization", @result={"results"=>["Al Qaeda in Mesopotamia (Org)", "Al Qaeda in the Islamic Maghreb (Org)"], "filter"=>"(Org)", "num_results"=>3, "query"=>"Al Qaeda"}>
+    tt = TimesTopics.new("Al Qaeda", "organization")
+    # => #<TimesTopics:0x10220b798 @url="http://topics.nytimes.com/top/reference/timestopics/organizations/a/al_qaeda/index.html", @related_results=["Al Qaeda in Mesopotamia (Org)", "Al Qaeda in the Islamic Maghreb (Org)"], @query="Al Qaeda", @type="organization", @result={"results"=>["Al Qaeda in Mesopotamia (Org)", "Al Qaeda in the Islamic Maghreb (Org)"], "filter"=>"(Org)", "num_results"=>3, "query"=>"Al Qaeda"}>
 
-tt.url
-# => "http://topics.nytimes.com/top/reference/timestopics/organizations/a/al_qaeda/index.html"
+    tt.url
+    # => "http://topics.nytimes.com/top/reference/timestopics/organizations/a/al_qaeda/index.html"
 
-tt.page_exists?
-# => true
+    tt.page_exists?
+    # => true
 
-tt.related_results
-# => ["Al Qaeda in Mesopotamia (Org)", "Al Qaeda in the Islamic Maghreb (Org)"]
+    tt.related_results
+    # => ["Al Qaeda in Mesopotamia (Org)", "Al Qaeda in the Islamic Maghreb (Org)"]
 
-tt.related_result_urls
-# => ["http://topics.nytimes.com/top/reference/timestopics/organizations/a/al_qaeda_in_mesopotamia/index.html", "http://topics.nytimes.com/top/reference/timestopics/organizations/a/al_qaeda_in_the_islamic_maghreb/index.html"]
+    tt.related_result_urls
+    # => ["http://topics.nytimes.com/top/reference/timestopics/organizations/a/al_qaeda_in_mesopotamia/index.html", "http://topics.nytimes.com/top/reference/timestopics/organizations/a/al_qaeda_in_the_islamic_maghreb/index.html"]
 
-tt = TimesTopics.new("Osama bin Laden")  ## defaults type to 'person'
-# => #<TimesTopics:0x10154ff18 @url="http://topics.nytimes.com/top/reference/timestopics/people/b/osama_bin_laden/index.html", @query="Osama bin Laden", @type="person", @result={"results"=>[], "filter"=>"(Per)", "num_results"=>1, "query"=>"Osama bin Laden"}>
+    tt = TimesTopics.new("Osama bin Laden")  ## defaults type to 'person'
+    # => #<TimesTopics:0x10154ff18 @url="http://topics.nytimes.com/top/reference/timestopics/people/b/osama_bin_laden/index.html", @query="Osama bin Laden", @type="person", @result={"results"=>[], "filter"=>"(Per)", "num_results"=>1, "query"=>"Osama bin Laden"}>
 
-tt.url
-# => "http://topics.nytimes.com/top/reference/timestopics/people/b/osama_bin_laden/index.html"
+    tt.url
+    # => "http://topics.nytimes.com/top/reference/timestopics/people/b/osama_bin_laden/index.html"
 
-tt.page_exists?
-# => true
+    tt.page_exists?
+    # => true
 
-tt.related_results
-# => nil
+    tt.related_results
+    # => nil
 
 == Note on Patches/Pull Requests
 
