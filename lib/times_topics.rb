@@ -2,7 +2,7 @@ require 'times_tags'
 
 class TimesTopics
   BASE_URI = 'http://topics.nytimes.com/top/reference/timestopics/'
-  attr_accessor :query, :type, :url, :result, :related_results, :num_results
+  attr_accessor :query, :type, :url, :result, :related_results, :num_results, :tag
 
   def initialize(query, type = 'person')
     @type = type
@@ -12,6 +12,7 @@ class TimesTopics
       @num_results = @result["num_results"]
       if @num_results > 0
         top_result = @result["results"].shift
+        @tag = top_result
         case @type
         when /person/
           @url = build_person_url(top_result)

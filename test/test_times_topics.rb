@@ -26,6 +26,9 @@ class TestTimesTopics < Test::Unit::TestCase
       should "page_exists?" do
         assert @topic.page_exists?
       end
+      should "tag" do
+        assert_equal "bin Laden, Osama (Per)", @topic.tag
+      end
       should "url" do
         assert_equal "http://topics.nytimes.com/top/reference/timestopics/people/b/osama_bin_laden/index.html", @topic.url
       end
