@@ -12,35 +12,35 @@ class TestTimesTags < Test::Unit::TestCase
   context "Searching" do
     setup do
       TimesTags.config_path = File.join(File.dirname(__FILE__), 'times_topics.yml')
-      TimesTags.stubs(:get)
+      #TimesTags.stubs(:get)
     end
     should "person_search" do
-      TimesTags.expects(:get).with('/suggest', :query => { :query => 'Sebastien', :filter => '(Per)' })
+      TimesTags.expects(:get).with('/suggest', {:query => {'api-key' => TimesTags.api_key, :query => 'Sebastien', :filter => '(Per)'}})
       TimesTags.person_search('Sebastien')
     end
     should "organization_search" do
-      TimesTags.expects(:get).with('/suggest', :query => { :query => 'Sebastien', :filter => '(Org)' })
+      TimesTags.expects(:get).with('/suggest', { :query => { 'api-key' => TimesTags.api_key, :query => 'Sebastien', :filter => '(Org)' }})
       TimesTags.organization_search('Sebastien')
     end
     should "geographic_search" do
-      TimesTags.expects(:get).with('/suggest', :query => { :query => 'Sebastien', :filter => '(Geo)' })
+      TimesTags.expects(:get).with('/suggest', { :query => { 'api-key' => TimesTags.api_key, :query => 'Sebastien', :filter => '(Geo)' }})
       TimesTags.geographic_search('Sebastien')
     end
     should "subject_search" do
-      TimesTags.expects(:get).with('/suggest', :query => { :query => 'Sebastien', :filter => '(Des)' })
+      TimesTags.expects(:get).with('/suggest', {:query => {'api-key' => TimesTags.api_key, :query => 'Sebastien', :filter => '(Des)'}})
       TimesTags.subject_search('Sebastien')
     end
     should "search" do
-      TimesTags.expects(:get).with('/suggest', :query => { :query => 'Sebastien', :filter => '(Des)' })
+      TimesTags.expects(:get).with('/suggest', {:query => {'api-key' => TimesTags.api_key, :query => 'Sebastien', :filter => '(Des)'}})
       TimesTags.search('Sebastien', 'subject')
 
-      TimesTags.expects(:get).with('/suggest', :query => { :query => 'Sebastien', :filter => '(Geo)' })
+      TimesTags.expects(:get).with('/suggest', { :query => { 'api-key' => TimesTags.api_key, :query => 'Sebastien', :filter => '(Geo)' }})
       TimesTags.search('Sebastien', 'geographic')
 
-      TimesTags.expects(:get).with('/suggest', :query => { :query => 'Sebastien', :filter => '(Org)' })
+      TimesTags.expects(:get).with('/suggest', { :query => { 'api-key' => TimesTags.api_key, :query => 'Sebastien', :filter => '(Org)' }})
       TimesTags.search('Sebastien', 'organization')
 
-      TimesTags.expects(:get).with('/suggest', :query => { :query => 'Sebastien', :filter => '(Per)' })
+      TimesTags.expects(:get).with('/suggest', { :query => { 'api-key' => TimesTags.api_key, :query => 'Sebastien', :filter => '(Per)' }})
       TimesTags.search('Sebastien', 'person')
     end
 
