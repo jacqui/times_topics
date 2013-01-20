@@ -1,3 +1,6 @@
+** I am updating this gem for the modern era in the develop branch! Once it is stable and funky-in-a-good-way, I will release it to master. Until then, you may use this branch at your own risk :) **
+
+
 # TimesTopics
 
 A simple wrapper for the TimesTags API and Times Topics
@@ -60,4 +63,4 @@ You can then interact with Times Topics:
 
 ### Copyright
 
-Copyright (c) 2010 Jacqui Maher. See LICENSE for details.
+Copyright (c) 2010-2013 Jacqui Maher. See LICENSE for details.
