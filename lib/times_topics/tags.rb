@@ -1,6 +1,6 @@
 require 'httparty'
 
-class TimesTags
+class Tags
   include HTTParty
 
   base_uri "http://api.nytimes.com/svc/timestags"
