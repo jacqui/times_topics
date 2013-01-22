@@ -1,11 +1,11 @@
 require 'helper'
 
 class TestTimesTopics < Test::Unit::TestCase
-  context "TimesTopics" do
+  context "Topics" do
     context "not found" do
       setup do
-        TimesTags.stubs(:search).returns({ "results"=>[], "filter"=>"(Per)", "num_results"=>0, "query"=>"Not found"})
-        @topic = TimesTopics.new("Not found")
+        Tags.stubs(:search).returns({ "results"=>[], "filter"=>"(Per)", "num_results"=>0, "query"=>"Not found"})
+        @topic = Topics.new("Not found")
       end
       should "page_exists?" do
         assert !@topic.page_exists?
@@ -20,8 +20,8 @@ class TestTimesTopics < Test::Unit::TestCase
 
     context "result found" do
       setup do
-        TimesTags.stubs(:search).returns({"results"=>["bin Laden, Osama (Per)"], "filter"=>"(Per)", "num_results"=>1, "query"=>"Osama Bin Laden"})
-        @topic = TimesTopics.new("Osama Bin Laden")
+        Tags.stubs(:search).returns({"results"=>["bin Laden, Osama (Per)"], "filter"=>"(Per)", "num_results"=>1, "query"=>"Osama Bin Laden"})
+        @topic = Topics.new("Osama Bin Laden")
       end
       should "page_exists?" do
         assert @topic.page_exists?

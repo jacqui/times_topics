@@ -1,13 +1,11 @@
-** I am updating this gem for the modern era in the develop branch! Once it is stable and funky-in-a-good-way, I will release it to master. Until then, you may use this branch at your own risk :) **
-
-
 # TimesTopics
 
 A simple wrapper for the TimesTags API and Times Topics
 
 Interact with the [TimesTags API](http://developer.nytimes.com/docs/timestags_api) with this rubygem. Find people, organizations, locations, and subjects matching queries. Find Times Topics pages for query matches along with related topics, when applicable.
 
-## Usage
+
+## Installation
 
 First, ensure you have an API key. You may request one on [the NYT developer site](http://developer.nytimes.com/apps/register/).
 
@@ -16,6 +14,22 @@ Once you have an API key, save it in a config file like config/times_topics.yml:
 ```ruby
 api_key: 123456abcde
 ```
+
+Add this line to your application's Gemfile:
+
+```ruby
+gem 'times_topics'
+```
+
+And then execute:
+
+    $ bundle
+
+Or install it yourself as:
+
+    $ gem install times_topics
+
+## Usage
 
 You can then interact with Times Topics:
 
@@ -51,16 +65,14 @@ You can then interact with Times Topics:
     # => nil
 ```
 
-### Note on Patches/Pull Requests
+## Contributing
 
-* Fork the project.
-* Make your feature addition or bug fix.
-* Add tests for it. This is important so I don't break it in a
-  future version unintentionally.
-* Commit, do not mess with rakefile, version, or history.
-  (if you want to have your own version, that is fine but bump version in a commit by itself I can ignore when I pull)
-* Send me a pull request. Bonus points for topic branches.
+1. Fork it
+2. Create your feature branch (`git checkout -b my-new-feature`)
+3. Commit your changes (`git commit -am 'Add some feature'`)
+4. Push to the branch (`git push origin my-new-feature`)
+5. Create new Pull Request
 
 ### Copyright
 
-Copyright (c) 2010-2013 Jacqui Maher. See LICENSE for details.
+Copyright (c) 2010-2013 Jacqui Maher, The New York Times Company. See LICENSE for details.

@@ -1,4 +1,4 @@
-# A sample Gemfile
-source "https://rubygems.org"
+source 'https://rubygems.org'
 
-gemspec :name => 'times_topics'
+# Specify your gem's dependencies in times_topics.gemspec
+gemspec
